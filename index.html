@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+              body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #ffcccc, #ff99cc, #ff66cc, #ff3399); /* Градиентный фон */
+            position: relative;
+            animation: neonBackground 5s infinite alternate; /* Анимация для переливания неоновыми цветами */
+        }
+
+        /* Анимация для переливания неоновыми цветами */
+        @keyframes neonBackground {
+            0% {
+                background: linear-gradient(to right, #ffcccc, #ff99cc, #ff66cc, #ff3399);
+            }
+            50% {
+                background: linear-gradient(to right, #ff3399, #ff66cc, #ff99cc, #ffcccc);
+            }
+            100% {
+                background: linear-gradient(to right, #ffcccc, #ff99cc, #ff66cc, #ff3399);
+            }
+        }
+
+        .heart-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background-color: red;
+            transform: rotate(-45deg);
+            cursor: pointer;
+            border: none;
+            outline: none;
+            animation: heartbeat 1s infinite;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Добавление тени */
+          
+        }
+
+        .heart-button::before,
+        .heart-button::after {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: red;
+            border-radius: 50%;
+            z-index: -5;
+        }
+
+        .heart-button::before {
+            top: -60px;
+            left: 0;
+        }
+
+        .heart-button::after {
+            left: 60px;
+            top: 0;
+        }
+
+        .heart-button span {
+            transform: rotate(45deg);
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            width: 70px; /* Ширина текста */
+            display: block;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(-45deg);
+            }
+        }
+
+        .heart-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            width: 360px;
+            height: 600px;
+        }
+        .heart-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+    </style>
+    <title>Кнопка-сердце</title>
+</head>
+<body>
+    <button class="heart-button"><span>Спасибо что ты есть</span></button>
+    <img src="./The most beloved girl.png" alt="Изображение" class="heart-image">
+</body>
+</html>
